@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Simple Site</title>
+  </head>
+  <body class="bg-[#FBFAFF]">
+    <header class="min-h-dvh bg-[url(../images/hero.png)] bg-cover bg-no-repeat text-white">
+        <div class="lg:px-24 py-8 lg:py-0 flex lg:gap-8 justify-between items-center px-8 bg-[#151083]">
+            <h1 class="flex gap-2">
+                <img class="w-32 object-contain md:w-44 md:h-10" src="images/brand.png" alt="">
+            </h1>
+            <span class="hidden lg:block w-px h-8 bg-gray-400"></span>
+            <nav id="nav" class="nav fixed lg:static z-20 inset-0 bg-white/90 w-full flex lg:bg-transparent -translate-y-full items-center lg:h-auto lg:py-0 font-bold backdrop-blur lg:translate-y-0 transition-transform">
+                <ul class="absolute lg:static inset-0 flex flex-col lg:flex-row lg:text-white py-12 gap-4 lg:gap-8 items-center text-[#432361]">
+                    <li>All Projects</li>
+                    <li>About us</li>
+                    <li>Start Project</li>
+                </ul>
+                <ul class="hidden lg:flex lg:ml-auto justify-center flex-col lg:gap-8 lg:flex-row gap-6 items-center gap-2 p-2">
+                    <li class="lg:border lg:border-white lg:px-4 lg:py-3 lg:rounded-lg">Login</li>
+                    <li class="lg:py-3 lg:px-4 lg:bg-gradient-to-r from-[#4489FC] to-[#2B5FFE] rounded-xl">Create Account</li>
+                </ul>
+            </nav>
+            <button id="hamburger-container" class="hamburger-container lg:hidden">
+                <span id="hamburger" class="hamburger"></span>
+            </button>
+        </div>
+        <section class="flex lg:px-24 flex-col gap-4 px-8 py-16">
+            <p class="text-xs font-bold text-[#FFB49C] tracking-widest">INVEST SMARTER. BE PART OF THE FUTURE</p>
+            <div class="flex lg:gap-8">
+                <div class="flex lg:w-1/2 flex-col gap-8 xl:gap-24">
+                    <div class="flex flex-col gap-6">
+                        <p class="font-bold text-3xl md:text-[64px] leading-[82px]">Invest in the future you believe in</p>
+                        <p class="font-normal">Access highly-vetted invetment opportunities in movies, documentaries and cinema works</p>
+                        <div class="flex gap-4">
+                            <a class="rounded-xl py-4 px-6 bg-gradient-to-r from-[#4489FC] to-[#324b94] bg-[length:100%] hover:bg-[length:500%] transition-all duration-1000" href="/">Invest now</a>
+                            <a class="outline rounded-xl outline-1 outline-white px-6 py-4" href="/">Start a campaign</a>
+                        </div>
+                    </div>
+                    <button class="w-16 group h-16">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect class="stroke-white stroke fill-transparent group-hover:fill-[#4489FC] group-hover:stroke-[#4489FC] transition-all duration-500" x="1" y="63" width="62" height="62" rx="31" transform="rotate(-90 1 63)" />
+                            <path class="transition duration-500" fill-rule="evenodd" clip-rule="evenodd" d="M34.0909 28.2652C34.4968 27.8906 35.1294 27.9159 35.504 28.3217L38.7348 31.8217C39.0884 32.2047 39.0884 32.7952 38.7348 33.1782L35.504 36.6783C35.1294 37.0841 34.4968 37.1094 34.091 36.7348C33.6851 36.3602 33.6598 35.7276 34.0344 35.3217L35.716 33.5L26 33.5C25.4477 33.5 25 33.0523 25 32.5C25 31.9477 25.4477 31.5 26 31.5L35.716 31.5L34.0344 29.6783C33.6598 29.2725 33.6851 28.6398 34.0909 28.2652Z" fill="white"/>
+                        </svg>
+                    </button>
+                    <div class="flex gap-4 items-center">
+                        <p class="tracking-widest">FOLLOW US</p>
+                        <span class="w-10 h-[2px] bg-[#764AF2]"></span>
+                        <div class="flex gap-4">
+                            <button class="group w-6 h-6">
+                                <svg class="drop-shadow-xl" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="group-hover:fill-black transition-colors" d="M12.6144 21H3.99346C3.44463 21 3 20.5551 3 20.0065V3.99345C3 3.44469 3.4447 3 3.99346 3H20.0066C20.5552 3 21 3.44469 21 3.99345V20.0065C21 20.5552 20.5552 21 20.0066 21H15.4197V14.0294H17.7594L18.1098 11.3128H15.4197V9.57849C15.4197 8.79198 15.6381 8.256 16.766 8.256L18.2045 8.25537V5.82566C17.9557 5.79255 17.1018 5.71859 16.1083 5.71859C14.0343 5.71859 12.6144 6.98457 12.6144 9.30945V11.3128H10.2687V14.0294H12.6144V21Z" fill="white"/>
+                                </svg>
+                            </button>
+                            <button class="group w-6 h-6">
+                                <svg class="drop-shadow-xl" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="group-hover:fill-black transition-colors" d="M21 6.77573C20.3386 7.07692 19.6265 7.28061 18.8796 7.37161C19.6424 6.90358 20.2277 6.16143 20.5034 5.27736C19.7892 5.71073 19 6.026 18.1569 6.19502C17.4849 5.45937 16.5246 5 15.4617 5C13.4237 5 11.7702 6.69556 11.7702 8.78657C11.7702 9.08342 11.8019 9.37161 11.8653 9.64897C8.79609 9.49079 6.07554 7.98483 4.25304 5.69122C3.93502 6.25244 3.7533 6.90358 3.7533 7.59697C3.7533 8.91008 4.40518 10.0693 5.3962 10.7486C4.79186 10.7302 4.22134 10.558 3.72266 10.2763V10.3229C3.72266 12.1582 4.99577 13.6891 6.68621 14.0358C6.37665 14.1246 6.05018 14.169 5.71315 14.169C5.47544 14.169 5.243 14.1463 5.01796 14.1018C5.48811 15.6056 6.85103 16.701 8.46751 16.7302C7.20391 17.7465 5.61067 18.3521 3.88114 18.3521C3.5832 18.3521 3.28843 18.3348 3 18.3001C4.63444 19.3727 6.57633 20 8.66086 20C15.4543 20 19.168 14.2308 19.168 9.22644C19.168 9.06176 19.1648 8.89707 19.1585 8.73564C19.8801 8.20152 20.5066 7.53521 21 6.77573Z" fill="white"/>
+                                </svg>
+                            </button>
+                            <button class="group w-6 h-6">
+                                <svg class="drop-shadow-xl" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="group-hover:fill-black transition-colors" fill-rule="evenodd" clip-rule="evenodd" d="M5.11877 7.24268H5.09337C3.82338 7.24268 3 6.30793 3 5.12307C3 3.91516 3.84772 3 5.14311 3C6.43744 3 7.2333 3.91285 7.2587 5.11961C7.2587 6.30448 6.43744 7.24268 5.11877 7.24268ZM21 21H17.0218V14.6723C17.0218 13.016 16.3995 11.8853 15.031 11.8853C13.9844 11.8853 13.4023 12.6483 13.1313 13.3837C13.0419 13.6161 13.0435 13.9289 13.0452 14.2513V14.2513C13.0454 14.2951 13.0456 14.339 13.0456 14.383V21H9.10442C9.10442 21 9.15522 9.79106 9.10442 8.77217H13.0456V10.6912C13.2785 9.85215 14.5379 8.65461 16.5476 8.65461C19.041 8.65461 21 10.4135 21 14.2009V21ZM6.96237 8.77217H3.45402V21H6.96237V8.77217Z" fill="white"/>
+                                </svg>
+                            </button>
+                            <button class="group w-6 h-6">
+                                <svg class="drop-shadow-xl" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="group-hover:fill-black transition-colors" fill-rule="evenodd" clip-rule="evenodd" d="M16.2365 18.8454C16.4683 19.005 16.7671 19.0449 17.0335 18.9469C17.2999 18.8482 17.4958 18.627 17.5548 18.3589C18.1805 15.5001 19.6982 8.2642 20.2678 5.6637C20.311 5.4677 20.239 5.264 20.0806 5.1331C19.9222 5.0022 19.7026 4.9644 19.5067 5.0351C16.4878 6.1215 7.1904 9.513 3.39024 10.8801C3.14904 10.9669 2.99208 11.1923 3 11.4394C3.00864 11.6872 3.18 11.9021 3.42696 11.9742C5.1312 12.4698 7.36824 13.1593 7.36824 13.1593C7.36824 13.1593 8.41368 16.2288 8.95872 17.7898C9.02712 17.9858 9.1848 18.1398 9.39288 18.193C9.60024 18.2455 9.822 18.1902 9.9768 18.0481C10.8523 17.2445 12.2059 16.002 12.2059 16.002C12.2059 16.002 14.7778 17.8353 16.2365 18.8454ZM8.30928 12.7715L9.51816 16.6481L9.78672 14.1932C9.78672 14.1932 14.4574 10.0975 17.1199 7.763C17.1977 7.6944 17.2085 7.5796 17.1437 7.4991C17.0796 7.4186 16.9615 7.3997 16.873 7.4543C13.787 9.3702 8.30928 12.7715 8.30928 12.7715Z" fill="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden min-h-[396px] relative lg:block w-[511px] h-[396px] self-start">
+                    <img class="cursor-pointer animate-pulse hover:animate-none peer grayscale hover:grayscale-0 transition duration-500 z-10 absolute -translate-x-1/2 top-1/2 -translate-y-1/2 left-1/2" src="images/play.svg" />
+                    <img class="absolute h-full" src="images/rect.png" alt="">
+                    <img class="absolute h-full peer-hover:blur-0 peer-hover:grayscale-0 blur grayscale transition-all duration-700" src="images/micro-chip.png" alt="">
+                </div>
+            </div>
+        </section>
+    </header>
+    <main class="px-8 lg:px-0">
+        <section class="flex md:justify-center lg:gap-16 lg:mx-24 flex-col md:flex-row lg:px-8 md:items-center gap-2 px-4 rounded-xl -mt-12 md:-mt-9 bg-white py-4">
+            <div class="lg:flex-row lg:gap-4 lg:flex lg:items-center">
+                <p class="text-[#545A66]">Supported Cryptocurrencies</p>
+                <span class="w-full md:w-10 h-px bg-[#545A66]/40 rouded-full"></span>
+            </div>
+            <span class="w-full lg:hidden md:w-10 h-px bg-[#545A66]/40 rouded-full"></span>
+            <div class="flex gap-4">
+                <button class="group relative w-10 h-10">
+                    <img class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500" src="images/one-dark.svg" alt="">
+                    <img class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" src="images/one.svg" alt="">
+                </button>
+                <button class="group relative w-10 h-10">
+                    <img class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500" src="images/two-dark.svg" alt="">
+                    <img class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" src="images/two.svg" alt="">
+                </button>
+                <button class="group relative w-10 h-10">
+                    <img class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500" src="images/three-dark.svg" alt="">
+                    <img class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" src="images/three.svg" alt="">
+                </button>
+                <button class="group relative w-10 h-10">
+                    <img class="absolute inset-0" src="images/four.svg" alt="">
+                </button>
+                <button class="group relative w-10 h-10">
+                    <img class="absolute inset-0" src="images/five.svg" alt="">
+                </button>
+                <button class="group relative w-10 h-10">
+                    <img class="absolute inset-0 group-hover:opacity-0 transition-opacity duration-500" src="images/six-dark.svg" alt="">
+                    <img class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" src="images/six.svg" alt="">
+                </button>
+            </div>
+        </section>
+        <section class="flex flex-col gap-8 md:py-24">
+            <div class="flex flex-col gap-4 items-center">
+                <h2 class="font-bold text-2xl md:text-5xl text-[#1D263A]">Popular Projects</h2>
+                <p class="font-medium">Check out our featured projects from promising directors and curations. Start investing now. </p>
+            </div>
+            <div class="cards lg:px-12 py-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div class="bg-white shadow-xl mx-auto card max-w-[420px] flex flex-col gap-4 rounded-lg">
+                    <div class="overflow-hidden rounded-t-lg">
+                        <div class="w-full bg-blend-multiply bg-no-repeat bg-cover hover:bg-black/0 transition duration-500 bg-black/50 hover:scale-110 h-40 bg-[url('../images/cards/photo-one.png')]"></div>
+                    </div>
+                    <div class="px-4 py-6 flex flex-col gap-4">
+                        <div class="flex gap-4 justify-between">
+                            <div class="flex flex-col gap-2">
+                                <p class="py-[2px] rounded-full self-start text-xs bg-[#EF466F] px-2 text-white">Drama</p>
+                                <p class="font-bold text-xl">King of Boys</p>
+                            </div>
+                            <p class="items-center justify-center py-2 px-3 text-[#DC562B] hover:bg-transparent transition-colors rounded-lg flex flex-col bg-[#FFD0B6A6] border border-[#FBA286]">
+                                <span class="font-bold text-lg">25</span>
+                                <span class="text-[8px]">Days Left</span>
+                            </p>
+                        </div>
+                        <p class="text-[#545A66]">King of Boys follows the story of Alhaja Eniola Salami, a businesswoman and philanthropist with a checkered past and a promising political future.</p>
+                        <div class="flex items-center gap-2">
+                            <img class="w-[33px] h-[33px] grayscale hover:grayscale-0 transition" src="images/cards/fundraising.png" alt="">
+                            <p class="flex flex-col">
+                                <span class="text-[#545A66] text-[10px]">Fundraising Goal</span>
+                                <span class="font-bold">ETH 52,000,000</span>
+                            </p>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <div class="flex flex-col gap-3">
+                                <span class="text-xs text-[#363636]">Participate via:</span>
+                                <span class="flex gap-2 flex-wrap">
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F2994A]">
+                                        <span class="text-[#F2994A]">●</span>
+                                        <span class="text-[#F2994A] text-[9.33px]">BTC</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#627EEA]">
+                                        <span class="text-[#627EEA]">●</span>
+                                        <span class="text-[#627EEA] text-[9.33px]">ETH</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F3BA2F]">
+                                        <span class="text-[#F3BA2F]">●</span>
+                                        <span class="text-[9.33px] text-[#F3BA2F]">BNB</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <span class="font-bold text-xs">Hardcap:</span>
+                            <span class="font-medium text-xs">ETH 30,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Token - </span>
+                                <span class="font-bold text-xs text-orange-500">$KOB</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Stage:</span>
+                                <span class="font-medium text-xs text-[#363636]">Presale</span>
+                            </div>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2 items-center">
+                                <img class="rounded-full" src="images/cards/profile.png" alt="">
+                                <span class="text-xs">Kemi Adetiba</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <img class="w-[9.91px] h-[11.9px]" src="images/cards/location.svg" alt="">
+                                <span class="text-xs">Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl card max-w-[420px] flex flex-col gap-4 rounded-lg">
+                    <div class="overflow-hidden rounded-t-lg">
+                        <div class="w-full bg-blend-multiply bg-no-repeat bg-cover hover:bg-black/0 transition duration-500 grayscale hover:grayscale-0 hover:scale-110 h-40 bg-[url('../images/cards/photo-two.png')]"></div>
+                    </div>
+                    <div class="px-4 py-6 flex flex-col gap-4">
+                        <div class="flex gap-4 justify-between">
+                            <div class="flex flex-col gap-2">
+                                <p class="py-[2px] rounded-full self-start text-xs bg-[#46B2EF] px-2 text-white">Soap Opera</p>
+                                <p class="font-bold text-xl">Flint</p>
+                            </div>
+                            <p class="items-center justify-center py-2 px-3 text-[#DC562B] hover:bg-transparent transition-colors rounded-lg flex flex-col bg-[#FFD0B6A6] border border-[#FBA286]">
+                                <span class="font-bold text-lg">25</span>
+                                <span class="text-[8px]">Days Left</span>
+                            </p>
+                        </div>
+                        <p class="text-[#545A66]">King of Boys follows the story of Alhaja Eniola Salami, a businesswoman and philanthropist with a checkered past and a promising political future.</p>
+                        <div class="flex items-center gap-2">
+                            <img class="w-[33px] h-[33px] grayscale hover:grayscale-0 transition" src="images/cards/fundraising.png" alt="">
+                            <p class="flex flex-col">
+                                <span class="text-[#545A66] text-[10px]">Fundraising Goal</span>
+                                <span class="font-bold">ETH 52,000,000</span>
+                            </p>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <div class="flex flex-col gap-3">
+                                <span class="text-xs text-[#363636]">Participate via:</span>
+                                <span class="flex gap-2 flex-wrap">
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F2994A]">
+                                        <span class="text-[#F2994A]">●</span>
+                                        <span class="text-[#F2994A] text-[9.33px]">BTC</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#627EEA]">
+                                        <span class="text-[#627EEA]">●</span>
+                                        <span class="text-[#627EEA] text-[9.33px]">ETH</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F3BA2F]">
+                                        <span class="text-[#F3BA2F]">●</span>
+                                        <span class="text-[9.33px] text-[#F3BA2F]">BNB</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <span class="font-bold text-xs">Hardcap:</span>
+                            <span class="font-medium text-xs">ETH 30,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Token - </span>
+                                <span class="font-bold text-xs text-orange-500">$KOB</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Stage:</span>
+                                <span class="font-medium text-xs text-[#363636]">Presale</span>
+                            </div>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2 items-center">
+                                <img class="rounded-full" src="images/cards/profile.png" alt="">
+                                <span class="text-xs">Kemi Adetiba</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <img class="w-[9.91px] h-[11.9px]" src="images/cards/location.svg" alt="">
+                                <span class="text-xs">Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl card max-w-[420px] flex flex-col gap-4 rounded-lg">
+                    <div class="overflow-hidden rounded-t-lg">
+                        <div class="w-full bg-blend-multiply bg-no-repeat bg-cover hover:grayscale-0 transition duration-500 grayscale hover:scale-110 h-40 bg-[url('../images/cards/photo-one.png')]"></div>
+                    </div>
+                    <div class="px-4 py-6 flex flex-col gap-4">
+                        <div class="flex gap-4 justify-between">
+                            <div class="flex flex-col gap-2">
+                                <p class="py-[2px] rounded-full self-start text-xs bg-[#EF466F] px-2 text-white">Drama</p>
+                                <p class="font-bold text-xl">King of Boys</p>
+                            </div>
+                            <p class="items-center justify-center py-2 px-3 text-[#DC562B] hover:bg-transparent transition-colors rounded-lg flex flex-col bg-[#FFD0B6A6] border border-[#FBA286]">
+                                <span class="font-bold text-lg">25</span>
+                                <span class="text-[8px]">Days Left</span>
+                            </p>
+                        </div>
+                        <p class="text-[#545A66]">King of Boys follows the story of Alhaja Eniola Salami, a businesswoman and philanthropist with a checkered past and a promising political future.</p>
+                        <div class="flex items-center gap-2">
+                            <img class="w-[33px] h-[33px] grayscale hover:grayscale-0 transition" src="images/cards/fundraising.png" alt="">
+                            <p class="flex flex-col">
+                                <span class="text-[#545A66] text-[10px]">Fundraising Goal</span>
+                                <span class="font-bold">ETH 52,000,000</span>
+                            </p>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <div class="flex flex-col gap-3">
+                                <span class="text-xs text-[#363636]">Participate via:</span>
+                                <span class="flex gap-2 flex-wrap">
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F2994A]">
+                                        <span class="text-[#F2994A]">●</span>
+                                        <span class="text-[#F2994A] text-[9.33px]">BTC</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#627EEA]">
+                                        <span class="text-[#627EEA]">●</span>
+                                        <span class="text-[#627EEA] text-[9.33px]">ETH</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F3BA2F]">
+                                        <span class="text-[#F3BA2F]">●</span>
+                                        <span class="text-[9.33px] text-[#F3BA2F]">BNB</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <span class="font-bold text-xs">Hardcap:</span>
+                            <span class="font-medium text-xs">ETH 30,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Token - </span>
+                                <span class="font-bold text-xs text-orange-500">$KOB</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Stage:</span>
+                                <span class="font-medium text-xs text-[#363636]">Presale</span>
+                            </div>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2 items-center">
+                                <img class="rounded-full" src="images/cards/profile.png" alt="">
+                                <span class="text-xs">Kemi Adetiba</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <img class="w-[9.91px] h-[11.9px]" src="images/cards/location.svg" alt="">
+                                <span class="text-xs">Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl card max-w-[420px] flex flex-col gap-4 rounded-lg">
+                    <div class="overflow-hidden rounded-t-lg">
+                        <div class="w-full bg-blend-multiply bg-no-repeat bg-cover hover:bg-black/0 transition duration-500 bg-black/50 hover:scale-110 h-40 bg-[url('../images/cards/photo-two.png')]"></div>
+                    </div>
+                    <div class="px-4 py-6 flex flex-col gap-4">
+                        <div class="flex gap-4 justify-between">
+                            <div class="flex flex-col gap-2">
+                                <p class="py-[2px] rounded-full self-start text-xs bg-[#46B2EF] px-2 text-white">Soap Opera</p>
+                                <p class="font-bold text-xl">Flint</p>
+                            </div>
+                            <p class="items-center justify-center py-2 px-3 text-[#DC562B] hover:bg-transparent transition-colors rounded-lg flex flex-col bg-[#FFD0B6A6] border border-[#FBA286]">
+                                <span class="font-bold text-lg">25</span>
+                                <span class="text-[8px]">Days Left</span>
+                            </p>
+                        </div>
+                        <p class="text-[#545A66]">King of Boys follows the story of Alhaja Eniola Salami, a businesswoman and philanthropist with a checkered past and a promising political future.</p>
+                        <div class="flex items-center gap-2">
+                            <img class="w-[33px] h-[33px] grayscale hover:grayscale-0 transition" src="images/cards/fundraising.png" alt="">
+                            <p class="flex flex-col">
+                                <span class="text-[#545A66] text-[10px]">Fundraising Goal</span>
+                                <span class="font-bold">ETH 52,000,000</span>
+                            </p>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <div class="flex flex-col gap-3">
+                                <span class="text-xs text-[#363636]">Participate via:</span>
+                                <span class="flex gap-2 flex-wrap">
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F2994A]">
+                                        <span class="text-[#F2994A]">●</span>
+                                        <span class="text-[#F2994A] text-[9.33px]">BTC</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#627EEA]">
+                                        <span class="text-[#627EEA]">●</span>
+                                        <span class="text-[#627EEA] text-[9.33px]">ETH</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F3BA2F]">
+                                        <span class="text-[#F3BA2F]">●</span>
+                                        <span class="text-[9.33px] text-[#F3BA2F]">BNB</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <span class="font-bold text-xs">Hardcap:</span>
+                            <span class="font-medium text-xs">ETH 30,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Token - </span>
+                                <span class="font-bold text-xs text-orange-500">$KOB</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Stage:</span>
+                                <span class="font-medium text-xs text-[#363636]">Presale</span>
+                            </div>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2 items-center">
+                                <img class="rounded-full" src="images/cards/profile.png" alt="">
+                                <span class="text-xs">Kemi Adetiba</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <img class="w-[9.91px] h-[11.9px]" src="images/cards/location.svg" alt="">
+                                <span class="text-xs">Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl card max-w-[420px] flex flex-col gap-4 rounded-lg">
+                    <div class="overflow-hidden rounded-t-lg">
+                        <div class="w-full bg-blend-multiply bg-no-repeat bg-cover hover:bg-black/0 transition duration-500 bg-black/50 hover:scale-110 h-40 bg-[url('../images/cards/photo-one.png')]"></div>
+                    </div>
+                    <div class="px-4 py-6 flex flex-col gap-4">
+                        <div class="flex gap-4 justify-between">
+                            <div class="flex flex-col gap-2">
+                                <p class="py-[2px] rounded-full self-start text-xs bg-[#EF466F] px-2 text-white">Drama</p>
+                                <p class="font-bold text-xl">King of Boys</p>
+                            </div>
+                            <p class="items-center justify-center py-2 px-3 text-[#DC562B] hover:bg-transparent transition-colors rounded-lg flex flex-col bg-[#FFD0B6A6] border border-[#FBA286]">
+                                <span class="font-bold text-lg">25</span>
+                                <span class="text-[8px]">Days Left</span>
+                            </p>
+                        </div>
+                        <p class="text-[#545A66]">King of Boys follows the story of Alhaja Eniola Salami, a businesswoman and philanthropist with a checkered past and a promising political future.</p>
+                        <div class="flex items-center gap-2">
+                            <img class="w-[33px] h-[33px] grayscale hover:grayscale-0 transition" src="images/cards/fundraising.png" alt="">
+                            <p class="flex flex-col">
+                                <span class="text-[#545A66] text-[10px]">Fundraising Goal</span>
+                                <span class="font-bold">ETH 52,000,000</span>
+                            </p>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <div class="flex flex-col gap-3">
+                                <span class="text-xs text-[#363636]">Participate via:</span>
+                                <span class="flex gap-2 flex-wrap">
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F2994A]">
+                                        <span class="text-[#F2994A]">●</span>
+                                        <span class="text-[#F2994A] text-[9.33px]">BTC</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#627EEA]">
+                                        <span class="text-[#627EEA]">●</span>
+                                        <span class="text-[#627EEA] text-[9.33px]">ETH</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F3BA2F]">
+                                        <span class="text-[#F3BA2F]">●</span>
+                                        <span class="text-[9.33px] text-[#F3BA2F]">BNB</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <span class="font-bold text-xs">Hardcap:</span>
+                            <span class="font-medium text-xs">ETH 30,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Token - </span>
+                                <span class="font-bold text-xs text-orange-500">$KOB</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Stage:</span>
+                                <span class="font-medium text-xs text-[#363636]">Presale</span>
+                            </div>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2 items-center">
+                                <img class="rounded-full" src="images/cards/profile.png" alt="">
+                                <span class="text-xs">Kemi Adetiba</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <img class="w-[9.91px] h-[11.9px]" src="images/cards/location.svg" alt="">
+                                <span class="text-xs">Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl card max-w-[420px] flex flex-col gap-4 rounded-lg">
+                    <div class="overflow-hidden rounded-t-lg">
+                        <div class="w-full bg-blend-multiply bg-no-repeat bg-cover hover:bg-black/0 transition duration-500 grayscale hover:grayscale-0 hover:scale-110 h-40 bg-[url('../images/cards/photo-two.png')]"></div>
+                    </div>
+                    <div class="px-4 py-6 flex flex-col gap-4">
+                        <div class="flex gap-4 justify-between">
+                            <div class="flex flex-col gap-2">
+                                <p class="py-[2px] rounded-full self-start text-xs bg-[#46B2EF] px-2 text-white">Soap Opera</p>
+                                <p class="font-bold text-xl">Flint</p>
+                            </div>
+                            <p class="items-center justify-center py-2 px-3 text-[#DC562B] hover:bg-transparent transition-colors rounded-lg flex flex-col bg-[#FFD0B6A6] border border-[#FBA286]">
+                                <span class="font-bold text-lg">25</span>
+                                <span class="text-[8px]">Days Left</span>
+                            </p>
+                        </div>
+                        <p class="text-[#545A66]">King of Boys follows the story of Alhaja Eniola Salami, a businesswoman and philanthropist with a checkered past and a promising political future.</p>
+                        <div class="flex items-center gap-2">
+                            <img class="w-[33px] h-[33px] grayscale hover:grayscale-0 transition" src="images/cards/fundraising.png" alt="">
+                            <p class="flex flex-col">
+                                <span class="text-[#545A66] text-[10px]">Fundraising Goal</span>
+                                <span class="font-bold">ETH 52,000,000</span>
+                            </p>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <div class="flex flex-col gap-3">
+                                <span class="text-xs text-[#363636]">Participate via:</span>
+                                <span class="flex gap-2 flex-wrap">
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F2994A]">
+                                        <span class="text-[#F2994A]">●</span>
+                                        <span class="text-[#F2994A] text-[9.33px]">BTC</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#627EEA]">
+                                        <span class="text-[#627EEA]">●</span>
+                                        <span class="text-[#627EEA] text-[9.33px]">ETH</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F3BA2F]">
+                                        <span class="text-[#F3BA2F]">●</span>
+                                        <span class="text-[9.33px] text-[#F3BA2F]">BNB</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <span class="font-bold text-xs">Hardcap:</span>
+                            <span class="font-medium text-xs">ETH 30,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Token - </span>
+                                <span class="font-bold text-xs text-orange-500">$KOB</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Stage:</span>
+                                <span class="font-medium text-xs text-[#363636]">Presale</span>
+                            </div>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2 items-center">
+                                <img class="rounded-full" src="images/cards/profile.png" alt="">
+                                <span class="text-xs">Kemi Adetiba</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <img class="w-[9.91px] h-[11.9px]" src="images/cards/location.svg" alt="">
+                                <span class="text-xs">Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl card max-w-[420px] flex flex-col gap-4 rounded-lg">
+                    <div class="overflow-hidden rounded-t-lg">
+                        <div class="w-full bg-blend-multiply bg-no-repeat bg-cover hover:grayscale-0 transition duration-500 grayscale hover:scale-110 h-40 bg-[url('../images/cards/photo-one.png')]"></div>
+                    </div>
+                    <div class="px-4 py-6 flex flex-col gap-4">
+                        <div class="flex gap-4 justify-between">
+                            <div class="flex flex-col gap-2">
+                                <p class="py-[2px] rounded-full self-start text-xs bg-[#EF466F] px-2 text-white">Drama</p>
+                                <p class="font-bold text-xl">King of Boys</p>
+                            </div>
+                            <p class="items-center justify-center py-2 px-3 text-[#DC562B] hover:bg-transparent transition-colors rounded-lg flex flex-col bg-[#FFD0B6A6] border border-[#FBA286]">
+                                <span class="font-bold text-lg">25</span>
+                                <span class="text-[8px]">Days Left</span>
+                            </p>
+                        </div>
+                        <p class="text-[#545A66]">King of Boys follows the story of Alhaja Eniola Salami, a businesswoman and philanthropist with a checkered past and a promising political future.</p>
+                        <div class="flex items-center gap-2">
+                            <img class="w-[33px] h-[33px] grayscale hover:grayscale-0 transition" src="images/cards/fundraising.png" alt="">
+                            <p class="flex flex-col">
+                                <span class="text-[#545A66] text-[10px]">Fundraising Goal</span>
+                                <span class="font-bold">ETH 52,000,000</span>
+                            </p>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <div class="flex flex-col gap-3">
+                                <span class="text-xs text-[#363636]">Participate via:</span>
+                                <span class="flex gap-2 flex-wrap">
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F2994A]">
+                                        <span class="text-[#F2994A]">●</span>
+                                        <span class="text-[#F2994A] text-[9.33px]">BTC</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#627EEA]">
+                                        <span class="text-[#627EEA]">●</span>
+                                        <span class="text-[#627EEA] text-[9.33px]">ETH</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F3BA2F]">
+                                        <span class="text-[#F3BA2F]">●</span>
+                                        <span class="text-[9.33px] text-[#F3BA2F]">BNB</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <span class="font-bold text-xs">Hardcap:</span>
+                            <span class="font-medium text-xs">ETH 30,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Token - </span>
+                                <span class="font-bold text-xs text-orange-500">$KOB</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Stage:</span>
+                                <span class="font-medium text-xs text-[#363636]">Presale</span>
+                            </div>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2 items-center">
+                                <img class="rounded-full" src="images/cards/profile.png" alt="">
+                                <span class="text-xs">Kemi Adetiba</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <img class="w-[9.91px] h-[11.9px]" src="images/cards/location.svg" alt="">
+                                <span class="text-xs">Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white shadow-xl card max-w-[420px] flex flex-col gap-4 rounded-lg">
+                    <div class="overflow-hidden rounded-t-lg">
+                        <div class="w-full bg-blend-multiply bg-no-repeat bg-cover hover:bg-black/0 transition duration-500 bg-black/50 hover:scale-110 h-40 bg-[url('../images/cards/photo-two.png')]"></div>
+                    </div>
+                    <div class="px-4 py-6 flex flex-col gap-4">
+                        <div class="flex gap-4 justify-between">
+                            <div class="flex flex-col gap-2">
+                                <p class="py-[2px] rounded-full self-start text-xs bg-[#46B2EF] px-2 text-white">Soap Opera</p>
+                                <p class="font-bold text-xl">Flint</p>
+                            </div>
+                            <p class="items-center justify-center py-2 px-3 text-[#DC562B] hover:bg-transparent transition-colors rounded-lg flex flex-col bg-[#FFD0B6A6] border border-[#FBA286]">
+                                <span class="font-bold text-lg">25</span>
+                                <span class="text-[8px]">Days Left</span>
+                            </p>
+                        </div>
+                        <p class="text-[#545A66]">King of Boys follows the story of Alhaja Eniola Salami, a businesswoman and philanthropist with a checkered past and a promising political future.</p>
+                        <div class="flex items-center gap-2">
+                            <img class="w-[33px] h-[33px] grayscale hover:grayscale-0 transition" src="images/cards/fundraising.png" alt="">
+                            <p class="flex flex-col">
+                                <span class="text-[#545A66] text-[10px]">Fundraising Goal</span>
+                                <span class="font-bold">ETH 52,000,000</span>
+                            </p>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <div class="flex flex-col gap-3">
+                                <span class="text-xs text-[#363636]">Participate via:</span>
+                                <span class="flex gap-2 flex-wrap">
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F2994A]">
+                                        <span class="text-[#F2994A]">●</span>
+                                        <span class="text-[#F2994A] text-[9.33px]">BTC</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#627EEA]">
+                                        <span class="text-[#627EEA]">●</span>
+                                        <span class="text-[#627EEA] text-[9.33px]">ETH</span>
+                                    </span>
+                                    <span class="border flex gap-4 rounded-full items-center px-5 border-[#F3BA2F]">
+                                        <span class="text-[#F3BA2F]">●</span>
+                                        <span class="text-[9.33px] text-[#F3BA2F]">BNB</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                <img src="images/cards/check.png" alt="">
+                            </span>
+                            <span class="font-bold text-xs">Hardcap:</span>
+                            <span class="font-medium text-xs">ETH 30,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Token - </span>
+                                <span class="font-bold text-xs text-orange-500">$KOB</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="w-4 rounded-full h-4 bg-gradient-to-r flex items-center justify-center from-[#4489FC] to-[#2B5FFE]">
+                                    <img src="images/cards/check.png" alt="">
+                                </span>
+                                <span class="font-bold text-xs">Stage:</span>
+                                <span class="font-medium text-xs text-[#363636]">Presale</span>
+                            </div>
+                        </div>
+                        <span class="h-px w-full bg-[#E8EEFD]"></span>
+                        <div class="flex justify-between">
+                            <div class="flex gap-2 items-center">
+                                <img class="rounded-full" src="images/cards/profile.png" alt="">
+                                <span class="text-xs">Kemi Adetiba</span>
+                            </div>
+                            <div class="flex gap-2 items-center">
+                                <img class="w-[9.91px] h-[11.9px]" src="images/cards/location.svg" alt="">
+                                <span class="text-xs">Dubai, UAE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="text-white self-center py-3 px-4 bg-gradient-to-r from-[#4489FC] to-[#2B5FFE] rounded-xl">View All Projects</button>
+        </section>
+    </main>
+    <script src="js/styles.js"></script>
+  </body>
+</html>
